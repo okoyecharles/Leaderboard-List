@@ -1,0 +1,33 @@
+@import 'utils';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.lb {
+  padding: 1em 2em;
+
+  button {
+    height: 30px;
+  }
+
+  &__scores {
+    width: 100%;
+    @include flex-center();
+
+    align-items: flex-start;
+  }
+
+  &__displayHeader {
+    gap: 30px;
+    
+    @include flex-center()
+  }
+
+  &__add > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
