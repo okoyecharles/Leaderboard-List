@@ -4,9 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template</title>
+  <title>Leaderboard List</title>
 </head>
 <body>
-  <h1>This is a template file</h1>
+  <main>
+    <section class="lb">
+      <h1>Leaderboard</h1>
+
+      <!-- Leaderboard Scores Container Section -->
+      <div class="lb__scores">
+
+        <!-- Display Leaderboard Items -->
+        <div class="lb__display">
+          <div class="lb__displayHeader">
+            <h2>Recent Scores</h2>
+            <button>Refresh</button>
+          </div>
+          <div class="lb__displayContent">
+
+          </div>
+        </div>
+
+        <!-- Add Items to Leaderboard -->
+        <div class="lb__add">
+          <h2>Add Your score</h2>
+          <form action="null">
+            <input type="text" name="name" placeholder="Your name">
+            <input type="text" name="score" placeholder="Your score">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+      </div>
+      
+    </section>
+  </main>
 </body>
 </html>
