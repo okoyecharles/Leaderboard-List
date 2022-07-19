@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: clamp(16px, 2vw, 30px);
 }
 
 .lb {
@@ -10,24 +11,52 @@ body {
 
   button {
     height: 30px;
+    font-size: max(1vw, 15px);
   }
 
   &__scores {
     width: 100%;
-    @include flex-center();
-
+    flex-direction: column;
     align-items: flex-start;
+    @include flex-center;
   }
 
-  &__displayHeader {
-    gap: 30px;
-    
-    @include flex-center()
+  &__display {
+  
+    &Header {
+      gap: 30px;  
+      @include flex-center;
+    }
+
+    &List {
+      list-style: none;
+      padding: 0;
+      border: 1px solid;
+    }
+
+    &Item {
+      padding: .5rem 1rem;
+
+      &:nth-child(even) {
+        background: #d3d3d3;
+      }
+    }
   }
 
   &__add > form {
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+    & > input {
+      padding: .5rem 1rem;
+      font-size: max(1vw, 15px);
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  .lb__scores {
+    flex-direction: row;
   }
 }
