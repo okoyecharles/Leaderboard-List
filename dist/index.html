@@ -4,9 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template</title>
+  <title>Leaderboard List</title>
 <script defer src="bundle.js"></script></head>
 <body>
-  <h1>This is a template file</h1>
+  <main>
+    <section class="lb">
+      <h1>Leaderboard</h1>
+
+      <!-- Leaderboard Scores Container Section -->
+      <div class="lb__scores">
+
+        <!-- Display Leaderboard Items -->
+        <div class="lb__display">
+          <div class="lb__displayHeader">
+            <h2>Recent Scores</h2>
+            <button type="button">Refresh</button>
+          </div>
+          <ul class="lb__displayList">
+            <li class="lb__displayItem"><span>Alice</span>: <span>100</span></li>
+            <li class="lb__displayItem"><span>Charles</span>: <span>79</span></li>
+            <li class="lb__displayItem"><span>Nick</span>: <span>55</span></li>
+            <li class="lb__displayItem"><span>Stan</span>: <span>32</span></li>
+            <li class="lb__displayItem"><span>Mark</span>: <span>26</span></li>
+          </ul>
+        </div>
+
+        <!-- Add Items to Leaderboard -->
+        <div class="lb__add">
+          <h2>Add Your score</h2>
+          <form action="null">
+            <input type="text" name="name" placeholder="Your name">
+            <input type="text" name="score" placeholder="Your score">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+      </div>
+      
+    </section>
+  </main>
 </body>
 </html>
