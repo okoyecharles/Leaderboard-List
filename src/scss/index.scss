@@ -16,9 +16,9 @@ body {
 
   &__scores {
     width: 100%;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    @include flex-center;
-    
     align-items: flex-start;
   }
 

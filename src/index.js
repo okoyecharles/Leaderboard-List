@@ -1,19 +1,11 @@
 import './scss/index.scss';
-import './modules/interface'
-import { handleSubmit, load } from './modules/interface';
+import { handleSubmit, load } from './modules/interface.js';
 
 // Load the Leaderboard List
-load()
+load();
 
 const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit)
+form.addEventListener('submit', handleSubmit);
 
-const refresh = document.getElementById('refresh')
-refresh.addEventListener('click', () => load())
-
-
-
-
-
-
-
+const refresh = document.getElementById('refresh');
+refresh.addEventListener('click', () => load());
