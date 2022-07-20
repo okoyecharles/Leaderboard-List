@@ -1,46 +1,114 @@
 @import 'utils';
+@import url(//db.onlinewebfonts.com/c/a7fcb1becc12274d5b761b1d895f8aa9?family=Minecraft+Ten);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
+  color: #e8e8e8;
+  font-family: "Minecraft Ten";
+  letter-spacing: 1px;
   font-size: clamp(16px, 2vw, 30px);/* stylelint-disable-line */
+  background: black;
+
+  a {
+    color: #3b8526;
+    text-decoration: none;
+    @include font-stack;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 0;
+      bottom:  -5px;
+      border: 1px solid transparent;   
+      transition: .3s;
+    }    
+
+    &:hover::after {
+      width: 90%;
+      border: 1px solid #2a631c;
+    }
+  }
+}
+
+nav {
+  @include flex-center;
+  background-color: #171615;
+  width: 100%;
+  height: 10vh;
+}
+
+main {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .lb {
-  padding: 1em 2em;
+  padding: 1em 0;
+  background: rgba(0, 0, 0, 0.3);
+
+  h1 {
+    margin: 0 auto;
+    width: fit-content;
+  }
 
   button {
     height: 30px;
+    background: #3b8526;
+    color: white;
+    @include font-stack;
+    border: none;
+    box-shadow: inset 0 4px #6bc349, inset 0 -4px #2a631c, 0 4px rgb(0 0 0 / 25%);
+    text-transform: uppercase;
     font-size: max(1vw, 15px);/* stylelint-disable-line */
+    transition: .2s;
+
+    &:hover {
+      background: #171615;
+      background-image: linear-gradient(#3d3938,#171615);
+      box-shadow: inset 0 0 #fff, inset 0 0 #000;
+    }
   }
 
   &__scores {
+    margin: 1em 0;
     width: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   &__display {
     &Header {
       gap: 30px;
-
       @include flex-center;
     }
 
     &List {
       list-style: none;
       padding: 0;
-      border: 1px solid;
     }
 
     &Item {
       padding: 0.5rem 1rem;
+      opacity: .9;
+      @include font-stack;
+      color: rgb(38, 38, 38);  
 
       &:nth-child(even) {
         background: #d3d3d3;
       }
+      &:nth-child(odd) {
+        background: #3b8526;
+        color: white;
+      }  
     }
   }
 
@@ -50,14 +118,58 @@ body {
     gap: 1em;
 
     & > input {
-      padding: 0.5rem 1rem;
-      font-size: max(1vw, 15px);/* stylelint-disable-line */
+      height: 36px;
+      padding: 4px 8px;
+      border: none;
+      outline: none;
+      font-size: max(16px);/* stylelint-disable-line */
     }
   }
 }
 
+footer {
+  background-color: #171615;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    color: #3b8526;
+    font-size: clamp(26px, 4vw, 35px);/* stylelint-disable-line */
+  }
+
+  .copyright {
+    @include font-stack;
+  }
+
+  .sources {
+    margin: 0;
+    padding: 0;
+  }
+
+  .source {
+    @include font-stack;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+}
+
 @media (min-width: 550px) {
-  .lb__scores {
+  .lb {
+    h1 {
+      margin: 0 2em;
+    }
+
+    &__scores {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start;
+    }
+  }
+
+  footer {
     flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
   }
 }
