@@ -5,7 +5,7 @@
 }
 
 @mixin font-stack {
-  font-family: 'Noto Sans';
+  font-family: 'Noto Sans';/* stylelint-disable-line */
   font-size: 18px;
   font-weight: 500;
   text-shadow: 0 2px 0 rgb(0 0 0 / 25%);

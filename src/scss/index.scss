@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   color: #e8e8e8;
-  font-family: "Minecraft Ten";
+  font-family: "Minecraft Ten";/* stylelint-disable-line */
   letter-spacing: 1px;
   font-size: clamp(16px, 2vw, 30px);/* stylelint-disable-line */
   background: black;
@@ -14,7 +14,6 @@ body {
   a {
     color: #3b8526;
     text-decoration: none;
-    @include font-stack;
     position: relative;
 
     &::after {
@@ -23,23 +22,24 @@ body {
       height: 0;
       width: 0;
       left: 0;
-      bottom:  -5px;
-      border: 1px solid transparent;   
-      transition: .3s;
-    }    
+      bottom: -5px;
+      border: 1px solid transparent;
+      transition: 0.3s;
+    }
 
     &:hover::after {
       width: 90%;
       border: 1px solid #2a631c;
     }
+    @include font-stack;/* stylelint-disable-line */
   }
 }
 
 nav {
-  @include flex-center;
   background-color: #171615;
   width: 100%;
   height: 10vh;
+  @include flex-center;/* stylelint-disable-line */
 }
 
 main {
@@ -63,18 +63,18 @@ main {
     height: 30px;
     background: #3b8526;
     color: white;
-    @include font-stack;
     border: none;
     box-shadow: inset 0 4px #6bc349, inset 0 -4px #2a631c, 0 4px rgb(0 0 0 / 25%);
     text-transform: uppercase;
     font-size: max(1vw, 15px);/* stylelint-disable-line */
-    transition: .2s;
+    transition: 0.2s;
 
     &:hover {
       background: #171615;
-      background-image: linear-gradient(#3d3938,#171615);
+      background-image: linear-gradient(#3d3938, #171615);
       box-shadow: inset 0 0 #fff, inset 0 0 #000;
     }
+    @include font-stack;/* stylelint-disable-line */
   }
 
   &__scores {
@@ -88,7 +88,7 @@ main {
   &__display {
     &Header {
       gap: 30px;
-      @include flex-center;
+      @include flex-center;/* stylelint-disable-line */
     }
 
     &List {
@@ -98,17 +98,18 @@ main {
 
     &Item {
       padding: 0.5rem 1rem;
-      opacity: .9;
-      @include font-stack;
-      color: rgb(38, 38, 38);  
+      opacity: 0.9;
+      color: rgb(38, 38, 38);
 
       &:nth-child(even) {
         background: #d3d3d3;
       }
+
       &:nth-child(odd) {
         background: #3b8526;
         color: white;
-      }  
+      }
+      @include font-stack;/* stylelint-disable-line */
     }
   }
 
@@ -139,7 +140,7 @@ footer {
   }
 
   .copyright {
-    @include font-stack;
+    @include font-stack;/* stylelint-disable-line */
   }
 
   .sources {
@@ -148,9 +149,9 @@ footer {
   }
 
   .source {
-    @include font-stack;
     list-style: none;
     margin-bottom: 10px;
+    @include font-stack;/* stylelint-disable-line */
   }
 }
 
